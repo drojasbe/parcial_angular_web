@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { VehiculoComponent } from './vehiculo/vehiculo.component';
+// Importa el módulo Vehiculo
+import { VehiculoModule } from './vehiculo/vehiculo.module';
+
 
 @NgModule({
   declarations: [	
@@ -11,9 +11,8 @@ import { VehiculoComponent } from './vehiculo/vehiculo.component';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    VehiculoComponent
-  ],
+    VehiculoModule, 
+],
   providers: [],
   bootstrap: [AppComponent]
 })
