@@ -26,3 +26,8 @@
     </tbody>
   </table>
 </div>
+<!-- Mostrar el total por cada marca -->
+<div *ngFor="let marca of getMarcaKeys()" class="cantidades-container">
+  <p>Total {{ marca }}: {{ totalForEach[marca] }}</p>
+</div>
+

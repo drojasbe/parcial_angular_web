@@ -2,3 +2,11 @@
     margin: 20px 0;
     width: 65%;
 }
+
+.cantidades-container {
+    padding: 0;
+}
+
+.cantidades-container p {
+    margin: 0;
+}
