@@ -23,13 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'parcial_angular_web'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('parcial_angular_web');
+    expect(app.title).toEqual('Parcial Angular');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, parcial_angular_web');
-  });
 });

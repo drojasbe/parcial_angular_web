@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Vehiculo } from './vehiculo';
-import { dataVehiculos } from './tempVehiculoData';
 import { CommonModule } from '@angular/common';
-import { VehiculoService } from './vehiculo.service';
 import { ListarVehiculosComponent } from "./listarVehiculos/listarVehiculos.component";
 
 @Component({
