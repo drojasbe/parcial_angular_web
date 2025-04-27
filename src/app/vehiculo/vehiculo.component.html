@@ -9,32 +9,6 @@
     />
   </div>
   <hr />
-  <div class="container-fluid table-container">
-    <table class="table">
-      <thead>
-        <tr class="table-dark">
-          <th>#</th>
-          <th>Marca</th>
-          <th>Línea</th>
-          <th>Modelo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let c of vehiculos">
-          <td>
-            {{ c.id }}
-          </td>
-          <td>
-            {{ c.marca }}
-          </td>
-          <td>
-            {{ c.linea }}
-          </td>
-          <td>
-            {{ c.modelo }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <app-listarVehiculos [vehiculos]="vehiculos"></app-listarVehiculos>
+  
 </div>
