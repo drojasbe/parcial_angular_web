@@ -4,6 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // Importa el módulo Vehiculo
 import { VehiculoModule } from './vehiculo/vehiculo.module';
+import { provideHttpClient } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -13,9 +16,10 @@ import { VehiculoModule } from './vehiculo/vehiculo.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    VehiculoModule, 
+    VehiculoModule,
+    NgbModule
 ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Vehiculo } from './vehiculo';
 import { dataVehiculos } from './tempVehiculoData';
 import { CommonModule } from '@angular/common';
+import { VehiculoService } from './vehiculo.service';
 
 @Component({
   selector: 'app-vehiculo',
@@ -12,14 +13,16 @@ import { CommonModule } from '@angular/common';
 export class VehiculoComponent implements OnInit {
 
   vehiculos: Array<Vehiculo> = [];
-  constructor() { }
+  constructor(private vehiculoService: VehiculoService) {}
 
   ngOnInit() {
-    this.vehiculos = this.getVehiculosList();
+    this.getVehiculosList();
   }
 
-  getVehiculosList(): Array<Vehiculo> {
-    return dataVehiculos;
+  getVehiculosList(): void {
+    this.vehiculoService.getVehiculos().subscribe(vehiculos => {
+      this.vehiculos = vehiculos;
+    });
   }
 
 }
