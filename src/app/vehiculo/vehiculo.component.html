@@ -1,16 +1,22 @@
-<div class="container-fluid">
-  <div class="col-6">
+<div class="vehiculo-container">
+  <div class="header">TuSegundazo.com</div>
+  <hr />
+  <div class="container-home-img">
+    <img
+      src="/assets/img/home-image.png"
+      alt="Imagen de fondo"
+      class="img-fluid"
+    />
+  </div>
+  <hr />
+  <div class="container-fluid table-container">
     <table class="table">
       <thead>
-        <tr>
-          <th>id</th>
-          <th>marca</th>
-          <th>linea</th>
-          <th>referencia</th>
-          <th>modelo</th>
-          <th>kilometraje</th>
-          <th>color</th>
-          <th>imagen</th>
+        <tr class="table-dark">
+          <th>#</th>
+          <th>Marca</th>
+          <th>Línea</th>
+          <th>Modelo</th>
         </tr>
       </thead>
       <tbody>
@@ -25,21 +31,8 @@
             {{ c.linea }}
           </td>
           <td>
-            {{ c.referencia }}
-          </td>
-          <td>
             {{ c.modelo }}
           </td>
-          <td>
-            {{ c.kilometraje }}
-          </td>
-          <td>
-            {{ c.color }}
-          </td>
-          <td>
-            <img [src]="c.imagen" alt="Imagen del vehiculo" width="100" height="100">
-          </td>
-            
         </tr>
       </tbody>
     </table>

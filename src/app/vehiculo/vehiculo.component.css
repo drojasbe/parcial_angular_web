@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  font-size: 1.5rem;    
+}
+
+hr {
+  margin: 0;
+}
+
+.vehiculo-container {
+  max-width: 990px;
+  width: 80%;
+  margin: auto;
+}
+
+.container-home-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin: 20px 0;
+}
+
+.container-home-img img {
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+}
+
+.table-container{
+    margin: 20px 0;
+    width: 65%;
+}
