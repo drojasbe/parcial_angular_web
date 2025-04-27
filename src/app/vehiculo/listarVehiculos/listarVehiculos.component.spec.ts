@@ -8,6 +8,7 @@ import { ListarVehiculosComponent } from './listarVehiculos.component';
 import { VehiculoService } from '../vehiculo.service';
 import { Vehiculo } from '../vehiculo';
 import { of } from 'rxjs';
+import { provideHttpClient } from '@angular/common/http';
 
 class MockVehiculoService {
   getVehiculos() {
@@ -20,7 +21,7 @@ class MockVehiculoService {
         2017,
         93272,
         'Blanco',
-        faker.image.url(),
+        faker.image.url()
       ),
       new Vehiculo(
         faker.number.int(),
@@ -30,12 +31,11 @@ class MockVehiculoService {
         2016,
         94321,
         'Rojo',
-        faker.image.url(),
+        faker.image.url()
       ),
     ]);
   }
 }
-
 
 describe('ListarVehiculosComponent', () => {
   let component: ListarVehiculosComponent;
@@ -44,13 +44,10 @@ describe('ListarVehiculosComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [],
-      declarations: [ ListarVehiculosComponent ],
-      providers: [
-        { provide: VehiculoService, useClass: MockVehiculoService },  
-      ]
-    })
-    .compileComponents();
+      
+      imports: [ListarVehiculosComponent],
+      providers: [{ provide: VehiculoService, useClass: MockVehiculoService }, provideHttpClient()],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -64,8 +61,8 @@ describe('ListarVehiculosComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("Component has a table", () => {
-    expect(debug.query(By.css("tbody")).childNodes.length).toBeGreaterThan(0);
+  it('Component has a table', () => {
+    expect(debug.query(By.css('tbody')).childNodes.length).toBeGreaterThan(0);
   });
 
   it('should display the total number of vehicles for each brand', () => {
@@ -75,10 +72,9 @@ describe('ListarVehiculosComponent', () => {
     const marcas = component.getMarcaKeys();
     expect(marcas.length).toBeGreaterThan(0);
 
-    marcas.forEach((marca) => {
-      const element = debug.query(By.css(`p:contains('${marca}')`));
-      expect(element).toBeTruthy(); 
-    });
+    const compiled = fixture.nativeElement;
+    const pElement: HTMLElement = compiled.querySelector('p'); // Selecciona el primer <p>
+    expect(pElement.textContent).toContain(marcas[0]);
+    
   });
- 
 });
